@@ -1,0 +1,23 @@
+.navbar {
+  $navbar-breakpoint: $tablet;
+  $navbar-border-height: 0.7rem;
+  
+  #navbar-item-name {
+    border-right: 1px solid $black;
+    padding-top: $navbar-padding-vertical - $navbar-border-height;
+    padding-bottom: $navbar-padding-vertical - $navbar-border-height;
+    margin-top: $navbar-border-height;
+    margin-bottom: $navbar-border-height;
+  }
+
+  .section-link {
+    padding: 0;
+    margin-left: $size-7;
+    &:hover {
+      border-bottom: 1px solid $black;
+      color: currentColor;
+    }
+  }
+}
+
+

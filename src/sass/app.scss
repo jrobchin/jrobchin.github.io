@@ -1,0 +1,27 @@
+@charset "utf-8";
+@import '/vendor/inter/inter.css';
+@import '~bulma/sass/utilities/initial-variables';
+@import './_colors';
+
+/* Bulma Variable Customization */
+// Font family
+$family-sans-serif: "Inter", sans-serif;
+
+// Colors
+$background: $white;
+$primary: $black;
+
+/* Bulma Utils */
+@import '~bulma/sass/utilities/_all';
+
+/* Bulma UI */
+@import '~bulma/sass/base/_all';
+@import '~bulma/sass/grid/_all';
+@import '~bulma/sass/components/navbar';
+@import '~bulma/sass/layout/hero';
+@import '~bulma/sass/elements/button';
+
+/* Component Styles */
+@import 'global';
+@import 'nav-bar';
+@import 'hero';

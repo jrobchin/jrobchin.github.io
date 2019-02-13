@@ -1,0 +1,47 @@
+/*
+Global styles
+-------------
+*/
+/* CONTAINERS */
+#site-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* BUTTONS */
+button {
+  &.is-link {
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-size: $size-6;
+    color: $grey-darker;
+
+    &:hover {
+      color: $link;
+    }
+  }
+}
+
+/* LINKS */
+.social-link {
+  &:hover {
+    color: $black;
+  }
+}
+
+.github-link {
+  @extend .social-link;
+  color: #282D31;
+}
+
+.linkedin-link {
+  @extend .social-link;
+  color: #0D76B0;
+}
+
+.devpost-link {
+  @extend .social-link;
+  color: #40CAE3;
+}

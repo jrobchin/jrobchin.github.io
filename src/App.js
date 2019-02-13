@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './sass/App.scss';
+import './sass/app.scss';
+
+// Components
+import NavBar from './components/nav-bar.component';
+import Hero from './components/hero.component';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.sectionRefs = {
+      hero: React.createRef(),
+      experience: React.createRef(),
+      projects: React.createRef(),
+    };
+  }
+
   render() {
     return (
-      <div>
-        <h1>Jason Chin</h1>
-        <p>this site is currently under maintenance, check back later...</p>
+      <div id="site-container">
+        <NavBar />
+
+        <Hero />
       </div>
     );
   }
