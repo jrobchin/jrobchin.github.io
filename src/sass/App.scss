@@ -1,0 +1,17 @@
+@charset "utf-8";
+@import '/vendor/inter/inter.css';
+
+@import './_colors';
+
+/* 
+Bulma variables 
+---------------
+*/
+
+// Font family
+$family-sans-serif: "Inter", sans-serif;
+
+// Colors
+$background: $white;
+
+@import '~bulma/bulma';
