@@ -11,6 +11,9 @@ $family-sans-serif: "Inter", sans-serif;
 $background: $white;
 $primary: $black;
 
+// Breakpoints
+$navbar-breakpoint: $tablet;
+
 /* Bulma Utils */
 @import '~bulma/sass/utilities/_all';
 
