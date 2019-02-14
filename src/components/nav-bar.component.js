@@ -16,8 +16,6 @@ class NavBar extends Component {
   }
 
   render() { 
-    const { location } = this.props;
-
     return (
       <nav className="navbar" role="navigation">
         <div className="navbar-brand">
