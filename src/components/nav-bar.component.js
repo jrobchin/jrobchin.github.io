@@ -9,6 +9,12 @@ class NavBar extends Component {
     }
   }
 
+  toggleDropdown = () => {
+    this.setState({
+      mobileDropdown: !this.state.mobileDropdown
+    });
+  }
+
   render() { 
     const { location } = this.props;
 
@@ -21,14 +27,14 @@ class NavBar extends Component {
             </button>
           </div>
 
-          <a role="button" className="navbar-burger burger" data-target="nav-bar">
+          <button onClick={this.toggleDropdown} className={`navbar-burger burger is-link ${this.state.mobileDropdown ? 'is-active' : ''}`} data-target="nav-bar">
             <span></span>
             <span></span>
             <span></span>
-          </a>
+          </button>
         </div>
 
-        <div id="nav-bar" className="navbar-menu">
+        <div id="nav-bar" className={`navbar-menu ${this.state.mobileDropdown ? 'is-active' : ''}`}>
           <div className="navbar-start">
             <div className="navbar-item">
               <button className="is-link section-link">
