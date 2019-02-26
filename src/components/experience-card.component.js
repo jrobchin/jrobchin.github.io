@@ -9,11 +9,6 @@ class ExperienceCard extends Component {
     return (
       <div className="card experience-card">
         <article className="media">
-          {/* <figure className="media-left">
-            <p className="image">
-              <img src={img} />
-            </p>
-          </figure> */}
           <div className="media-content">
             <p className="image">
               <img src={img} />
@@ -29,11 +24,6 @@ class ExperienceCard extends Component {
               </p>
             </div>
           </div>
-          {/* <div className="media-right">
-            <button className="button is-white">
-              <i className="fas fa-angle-down"></i>
-            </button>
-          </div> */}
         </article>
       </div>
     );
