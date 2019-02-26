@@ -1,0 +1,19 @@
+.experience-card {
+  padding: 20px;
+  margin-bottom: 20px;
+
+  .image {
+    max-width: 70px;
+  }
+
+  .button.is-white {
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  h1.title {
+    margin-bottom: 5px;
+    font-size: $size-5;
+  }
+}
