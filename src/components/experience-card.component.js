@@ -16,8 +16,8 @@ class ExperienceCard extends Component {
           </figure>
           <div className="media-content">
             <div className="content">
+              <h1 className="title">{position}</h1>
               <p>
-                <h1 className="title">{position}</h1>
                 {company} - {location}
                 <br/>
                 <small>{dates} <i className="fas fa-caret-right"></i> {length}</small>
