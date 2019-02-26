@@ -30,5 +30,5 @@ export default [
     location: "Toronto, Canada",
     dates: "May 2017 - Sept 2017",
     length: "5 months",
-  }
+  },
 ];

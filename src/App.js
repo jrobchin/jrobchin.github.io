@@ -13,6 +13,7 @@ import experience from './data/experience';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.navRef = React.createRef();
     this.sectionRefs = {
       hero: React.createRef(),
       experience: React.createRef(),
@@ -21,11 +22,13 @@ class App extends Component {
   }
 
   scrollTo = (section) => {
+    let scrollTop;
     if (section === "hero") {
-      window.scrollTo({top: 0, left: 0, behavior: "smooth"});
+      scrollTop = 0;
     } else {
-      this.sectionRefs[section].current.scrollIntoView({behavior: "smooth", block: "start"});
+      scrollTop = this.sectionRefs[section].current.offsetTop - 53;
     }
+    window.scrollTo({top: scrollTop, left: 0, behavior: "smooth"});
   }
 
   renderExperience = () => {
@@ -53,18 +56,22 @@ class App extends Component {
     return (
       <div id="site-container">
       
-        <NavBar scrollTo={this.scrollTo}/>
+        <NavBar domRef={this.navRef} scrollTo={this.scrollTo}/>
 
-        <Hero />
+        <main style={{marginTop: 52}}>
 
-        <SiteSection title="experience" sectionRef={this.sectionRefs.experience}>
-          {this.renderExperience()}
-        </SiteSection>
+          <Hero />
 
-        <SiteSection title="projects" sectionRef={this.sectionRefs.projects}>
-          site section
-          {this.renderExperience()}
-        </SiteSection>
+          <SiteSection title="experience" sectionRef={this.sectionRefs.experience}>
+            {this.renderExperience()}
+          </SiteSection>
+
+          <SiteSection title="projects" sectionRef={this.sectionRefs.projects}>
+            site section
+            {this.renderExperience()}
+          </SiteSection>
+          
+        </main>
 
       </div>
     );

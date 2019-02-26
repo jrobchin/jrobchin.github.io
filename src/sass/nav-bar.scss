@@ -1,7 +1,11 @@
 $navbar-border-height: 0.7rem;
 
 .navbar {
-  
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid $grey;
+
   #navbar-item-name {
     border-right: 1px solid $black;
     padding-top: $navbar-padding-vertical - $navbar-border-height;

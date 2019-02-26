@@ -5,10 +5,10 @@ class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mobileDropdown: false
-    }
+      mobileDropdown: false,
+    };
   }
-
+  
   toggleDropdown = () => {
     this.setState({
       mobileDropdown: !this.state.mobileDropdown
@@ -16,12 +16,13 @@ class NavBar extends Component {
   }
 
   handleScrollTo = (section) => {
+    this.toggleDropdown();
     this.props.scrollTo(section);
   }
 
-  render() { 
+  render() {
     return (
-      <nav className="navbar" role="navigation">
+      <nav className="navbar" role="navigation" ref={this.props.domRef}>
         <div className="navbar-brand">
           <div id="navbar-item-name" className="navbar-item">
             <button className="is-link" onClick={() => this.handleScrollTo('hero')}>
