@@ -15,12 +15,16 @@ class NavBar extends Component {
     });
   }
 
+  handleScrollTo = (section) => {
+    this.props.scrollTo(section);
+  }
+
   render() { 
     return (
       <nav className="navbar" role="navigation">
         <div className="navbar-brand">
           <div id="navbar-item-name" className="navbar-item">
-            <button className="is-link">
+            <button className="is-link" onClick={() => this.handleScrollTo('hero')}>
               jason chin
             </button>
           </div>
@@ -35,13 +39,13 @@ class NavBar extends Component {
         <div id="nav-bar" className={`navbar-menu ${this.state.mobileDropdown ? 'is-active' : ''}`}>
           <div className="navbar-start">
             <div className="navbar-item">
-              <button className="is-link section-link">
+              <button className="is-link section-link" onClick={() => this.handleScrollTo('experience')}>
                 experience
               </button>
             </div>
 
             <div className="navbar-item">
-              <button className="is-link section-link">
+              <button className="is-link section-link" onClick={() => this.handleScrollTo('projects')}>
                 projects
               </button>
             </div>

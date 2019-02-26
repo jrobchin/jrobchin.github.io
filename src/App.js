@@ -20,6 +20,14 @@ class App extends Component {
     };
   }
 
+  scrollTo = (section) => {
+    if (section === "hero") {
+      window.scrollTo({top: 0, left: 0, behavior: "smooth"});
+    } else {
+      this.sectionRefs[section].current.scrollIntoView({behavior: "smooth", block: "start"});
+    }
+  }
+
   renderExperience = () => {
     let cards = [];
     
@@ -27,6 +35,7 @@ class App extends Component {
       const e = experience[i];
       cards.push(
         <ExperienceCard
+          key={i}
           img={e.img}
           position={e.position}
           company={e.company}
@@ -44,16 +53,17 @@ class App extends Component {
     return (
       <div id="site-container">
       
-        <NavBar />
+        <NavBar scrollTo={this.scrollTo}/>
 
         <Hero />
 
-        <SiteSection title="experience">
+        <SiteSection title="experience" sectionRef={this.sectionRefs.experience}>
           {this.renderExperience()}
         </SiteSection>
 
-        <SiteSection title="projects">
+        <SiteSection title="projects" sectionRef={this.sectionRefs.projects}>
           site section
+          {this.renderExperience()}
         </SiteSection>
 
       </div>
