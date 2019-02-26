@@ -19,13 +19,13 @@ class Hero extends Component {
   render() { 
     return (
       <div className="hero">
-        <section class="hero is-medium is-primary">
-          <div class="hero-body">
-            <div class="container">
-              <p class="title">
+        <section className="hero is-medium is-primary">
+          <div className="hero-body">
+            <div className="container">
+              <p className="title is-1">
                 jason chin
               </p>
-              <p class="subtitle">
+              <p className="subtitle">
                 <FadeTextChanger 
                   textList={this.state.subtitles}
                 />
