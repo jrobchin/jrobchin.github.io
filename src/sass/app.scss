@@ -21,10 +21,16 @@ $navbar-breakpoint: $tablet;
 @import '~bulma/sass/base/_all';
 @import '~bulma/sass/grid/_all';
 @import '~bulma/sass/components/navbar';
+@import '~bulma/sass/components/card';
+@import '~bulma/sass/components/media';
 @import '~bulma/sass/layout/hero';
+@import '~bulma/sass/layout/section';
 @import '~bulma/sass/elements/button';
+@import '~bulma/sass/elements/title';
 
 /* Component Styles */
 @import 'global';
 @import 'nav-bar';
 @import 'hero';
+@import 'site-section';
+@import 'experience-card';
