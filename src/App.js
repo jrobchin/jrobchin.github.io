@@ -3,6 +3,9 @@ import './sass/app.scss';
 
 import { Waypoint } from 'react-waypoint';
 
+// Utils
+import { isMobileOrTablet } from './utils/device';
+
 // Components
 import NavBar from './components/nav-bar.component';
 import Hero from './components/hero.component';
@@ -14,6 +17,8 @@ import ProjectCard from './components/project-card.component';
 import experience from './data/experience';
 import projects from './data/projects';
 import posed from 'react-pose';
+
+const NAV_HEIGHT = 53;
 
 const SlideInContainer = posed.div({
   out: { x: "-100%" },
@@ -49,16 +54,27 @@ class App extends Component {
       experience: React.createRef(),
       projects: React.createRef(),
     };
-    window.scrollTo(0, 0);
+    
+    this.isMobileOrTablet = isMobileOrTablet();
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      window.scrollTo(0, 0)
-    }, 100);
+    // Populate sections if the user loads the page scrolled to the bottom
+    for (const section in this.state.populated) {
+      if (this.state.populated.hasOwnProperty(section)) {
+        const s = this.sectionRefs[section];
+        console.log(window.scrollY, s.current.offsetTop);
+        if (window.scrollY >= s.current.offsetTop - NAV_HEIGHT) {
+          this.populateSection(section);
+        }
+      }
+    }
+
+    setTimeout(() => { console.log(window.scrollY); }, 1000)
   }
 
   populateSection = (section) => {
+    console.log(section);
     this.setState({
       populated: {
         ...this.state.populated,
@@ -72,9 +88,14 @@ class App extends Component {
     if (section === "hero") {
       scrollTop = 0;
     } else {
-      scrollTop = this.sectionRefs[section].current.offsetTop - 53;
+      scrollTop = this.sectionRefs[section].current.offsetTop - NAV_HEIGHT;
     }
-    window.scrollTo({top: scrollTop, left: 0, behavior: "smooth"});
+
+    if (this.isMobileOrTablet) {
+      window.scrollTo(0, scrollTop);
+    } else {
+      window.scrollTo({top: scrollTop, left: 0, behavior: "smooth"});
+    }
   }
 
   renderExperience = () => {
@@ -145,14 +166,16 @@ class App extends Component {
               </SlideInContainer>
             </SiteSection>
 
-            <Waypoint 
-              onEnter={() => this.populateSection('projects')}
-              />
+            
 
             <SiteSection title="projects" sectionRef={this.sectionRefs.projects}>
+              <Waypoint 
+                onEnter={() => this.populateSection('projects')}
+              >
               <SlideInContainer className="columns is-multiline" pose={this.state.populated.projects ? 'in' : 'out'}>
                 {this.renderProjects()}
               </SlideInContainer>
+              </Waypoint>
             </SiteSection>
           </div>
         </main>
