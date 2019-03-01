@@ -11,7 +11,8 @@
     "react-pose": "^4.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.5",
+    "react-waypoint": "^9.0.0"
   },
   "scripts": {
     "predeploy": "yarn run build",
