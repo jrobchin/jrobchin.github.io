@@ -63,18 +63,14 @@ class App extends Component {
     for (const section in this.state.populated) {
       if (this.state.populated.hasOwnProperty(section)) {
         const s = this.sectionRefs[section];
-        console.log(window.scrollY, s.current.offsetTop);
         if (window.scrollY >= s.current.offsetTop - NAV_HEIGHT) {
           this.populateSection(section);
         }
       }
     }
-
-    setTimeout(() => { console.log(window.scrollY); }, 1000)
   }
 
   populateSection = (section) => {
-    console.log(section);
     this.setState({
       populated: {
         ...this.state.populated,

@@ -12,28 +12,43 @@ class Hero extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      subtitles: SUBTITLES
+      subtitles: SUBTITLES,
     };
+  }
+
+  setHeroHeight = (e) => {
+    if (e) {
+      console.log(e.getBoundingClientRect());
+      setTimeout(() => {
+        console.log(e.getBoundingClientRect());
+      }, 1000);
+    }
   }
 
   render() { 
     return (
-      <div className="hero">
-        <section className="hero is-medium is-primary">
-          <div className="hero-body">
-            <div className="container">
-              <p className="title is-1">
-                jason chin
-              </p>
-              <p className="subtitle">
-                <FadeTextChanger 
-                  textList={this.state.subtitles}
-                />
-              </p>
-            </div>
+      <section className="hero is-medium is-primary" ref={this.setHeroHeight}>
+        <canvas 
+          className="hero-canvas"
+          style={{
+            position: "absolute",
+            width: "100%",
+          }}
+        >
+        </canvas>
+        <div className="hero-body">
+          <div className="container">
+            <p className="title is-1">
+              jason chin
+            </p>
+            <p className="subtitle">
+              <FadeTextChanger 
+                textList={this.state.subtitles}
+              />
+            </p>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     );
   }
 }
