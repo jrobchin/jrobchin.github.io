@@ -11,7 +11,7 @@ class ExperienceCard extends Component {
         <article className="media">
           <div className="media-content">
             <p className="image">
-              <img src={img} />
+              <img src={img} alt=""/>
             </p>
             <div className="content">
               <h1 className="title">{position}</h1>

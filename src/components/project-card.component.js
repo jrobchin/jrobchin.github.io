@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 class ProjectCard extends Component {
   render() {
@@ -10,7 +9,7 @@ class ProjectCard extends Component {
       <div className="card">
         <div className="card-image">
           <figure className="image is-4by3">
-            <img src={img} alt="Placeholder image" />
+            <img src={img} alt="" />
           </figure>
         </div>
         <div className="card-content">
