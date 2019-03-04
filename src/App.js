@@ -178,6 +178,10 @@ class App extends Component {
           </div>
         </main>
 
+        <p style={{margin: 'auto', marginTop: 20, padding: 10, textAlign: 'center', background: 'white'}}>
+          Copyright © 2019 Jason Chin
+        </p>
+
       </div>
     );
   }
