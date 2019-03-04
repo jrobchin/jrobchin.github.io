@@ -1,0 +1,14 @@
+.project-card {
+  height: 100%;
+  
+  h1.title {
+    font-size: $size-4;
+  }
+
+  img {
+    height: auto;
+    width: 90%;
+    display: block;
+    margin: auto;
+  }
+}

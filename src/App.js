@@ -60,14 +60,12 @@ class App extends Component {
 
   componentDidMount() {
     // Populate sections if the user loads the page scrolled to the bottom
-    for (const section in this.state.populated) {
-      if (this.state.populated.hasOwnProperty(section)) {
-        const s = this.sectionRefs[section];
-        if (window.scrollY >= s.current.offsetTop - NAV_HEIGHT) {
-          this.populateSection(section);
-        }
+    this.setState({
+      populated: {
+        experience: true,
+        projects: true
       }
-    }
+    });
   }
 
   populateSection = (section) => {
@@ -111,6 +109,7 @@ class App extends Component {
             location={e.location}
             dates={e.dates}
             length={e.length}
+            description={e.description}
           />
         </SlideInItem>
       );
@@ -133,6 +132,9 @@ class App extends Component {
             img={p.img}
             title={p.title}
             description={p.description}
+            site={p.site}
+            repo={p.repo}
+            devpost={p.devpost}
           />
         </SlideInItem>
       );

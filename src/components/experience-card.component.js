@@ -2,9 +2,40 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class ExperienceCard extends Component {
+
+  static defaultProps = {
+    description: []
+  };
+  
+
   render() {
 
-    let { img, company, position, location, dates, length } = this.props;
+    let { 
+      img, 
+      company, 
+      position, 
+      location, 
+      dates, 
+      length, 
+      description 
+    } = this.props;
+
+    let descriptionBullets = []
+    for (let i = 0; i < description.length; i++) {
+      let d = description[i];
+
+      let marginLeft = 0;
+      if (d[0] === "-") {
+        d = d.substring(1);
+        marginLeft = 20;
+      }
+
+      descriptionBullets.push(
+        <li key={i} style={{marginLeft}}>
+          {d}
+        </li>
+      );
+    }
 
     return (
       <div className="card experience-card">
@@ -19,9 +50,10 @@ class ExperienceCard extends Component {
                 {company} - {location}
                 <br/>
                 <small>{dates} <i className="fas fa-caret-right"></i> {length}</small>
-                <br/>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
               </p>
+              <ul>
+                {descriptionBullets}
+              </ul>
             </div>
           </div>
         </article>
@@ -37,10 +69,7 @@ ExperienceCard.propTypes = {
   location: PropTypes.string,
   dates: PropTypes.string,
   length: PropTypes.string,
-  description: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.string
-  ])
-}
- 
+  description: PropTypes.array
+};
+
 export default ExperienceCard;
