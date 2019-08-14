@@ -1,5 +1,14 @@
 export default [
   {
+    img: "/img/Omnia-logo.jpeg",
+    position: "Data Science Intern",
+    company: "Deloitte Omnia AI",
+    location: "Toronto, Canada",
+    dates: "May 2018 - August 2019",
+    length: "4 months",
+    description: []
+  },
+  {
     img: "/img/WAIC-logo.jpeg",
     position: "Founder & Executive Director",
     company: "Western AI Collective (WAIC)",
