@@ -1,12 +1,17 @@
 export default [
   {
-    img: "/img/Omnia-logo.jpeg",
+    img: "/img/Deloitte-logo.jpg",
     position: "Data Science Intern",
     company: "Deloitte Omnia AI",
     location: "Toronto, Canada",
     dates: "May 2018 - August 2019",
     length: "4 months",
-    description: []
+    description: [
+      'Designed a solution to extract network threat mitigation using natural language processing (NLP) from vulnerability databases saving thousands of development hours.',
+      'Aggregated a dataset of 750,000+ samples & trained a FastText classifier with 86% accuracy.',
+      'Managed development of an AI-powered highlight reel platform.',
+
+    ]
   },
   {
     img: "/img/WAIC-logo.jpeg",
