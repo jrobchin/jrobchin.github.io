@@ -14,17 +14,16 @@ export default [
     ]
   },
   {
-    img: "/img/WAIC-logo.jpeg",
-    position: "Founder & Executive Director",
+    img: "/img/WAI-logo.jpg",
+    position: "Founder & VP Projects",
     company: "Western AI Collective (WAIC)",
     location: "London, Canada",
     dates: "Sept. 2018 - Present",
-    length: "6 months",
+    length: "1+ years",
     description: [
-      'Founded a not-for-profit organization, committed to creating an ecosystem for artificial intelligence in Southwestern Ontario ',
-      'Designed and delivered workshops on artificial intelligence and machine learning to 25+ students and livestreamed on Facebook ',
+      'Led project teams building AI focused projects ',
+      'Designed and delivered workshops on artificial intelligence and machine learning to 30+ students and livestreamed on Facebook ',
       'Covered topics such as "Basic Machine Learning" and "Intro to Neural Networks" ',
-      'Guided and contributed to project initiatives ',
       'Built relationships with sponsors to fund club initiatives',
     ],
   },
