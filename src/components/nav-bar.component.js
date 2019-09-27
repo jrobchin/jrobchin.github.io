@@ -54,6 +54,12 @@ class NavBar extends Component {
 
           <div className="navbar-end">
             <div className="navbar-item">
+              <a className="resume-link" href="/files/resume-jason_chin.pdf" target="blank">
+                resume
+              </a>
+            </div>
+
+            <div className="navbar-item">
               <a className="github-link" href="https://github.com/jrobchin">
                 github
               </a>
