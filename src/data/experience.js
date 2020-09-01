@@ -18,8 +18,8 @@ export default [
     position: "Founder & VP Projects",
     company: "Western AI",
     location: "London, Canada",
-    dates: "Sept. 2018 - Present",
-    length: "1+ years",
+    dates: "Sept. 2018 - Sept 2020",
+    length: "2 years",
     description: [
       'Founded a club which attracted over 400 members in the first year',
       'Led project teams building AI focused projects',
