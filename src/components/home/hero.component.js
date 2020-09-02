@@ -47,10 +47,18 @@ class Hero extends Component {
     this.canvasRef = React.createRef();
 
     this.circles = [];
+
+    this.interval = null;
   }
 
   componentDidMount() {
-    setInterval(this.renderCanvas, 16)
+    // Start updating once component mounts
+    this.interval = setInterval(this.renderCanvas, 16)
+  }
+
+  componentWillUnmount() {
+    // Stop updating once component unmounts
+    if (this.interval !== null) clearInterval(this.interval)
   }
 
   updateCanvas = () => {

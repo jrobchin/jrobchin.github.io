@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class NavBar extends Component {
+  /* 
+  NavBar
+  Children can be passed to add a left section to the NavBar.
+  */
 
   constructor(props) {
     super(props);
@@ -8,7 +13,7 @@ class NavBar extends Component {
       mobileDropdown: false,
     };
   }
-  
+
   toggleDropdown = () => {
     this.setState({
       mobileDropdown: !this.state.mobileDropdown
@@ -39,18 +44,15 @@ class NavBar extends Component {
 
         <div id="nav-bar" className={`navbar-menu ${this.state.mobileDropdown ? 'is-active' : ''}`}>
           <div className="navbar-start">
-            <div className="navbar-item">
-              <button className="is-link section-link" onClick={() => this.handleScrollTo('experience')}>
-                experience
-              </button>
-            </div>
+            {this.props.children}
 
             <div className="navbar-item">
-              <button className="is-link section-link" onClick={() => this.handleScrollTo('projects')}>
-                projects
+              <button className="is-link section-link">
+                <Link to="/experiments">experiments</Link>
               </button>
             </div>
           </div>
+
 
           <div className="navbar-end">
             <div className="navbar-item">
@@ -82,5 +84,5 @@ class NavBar extends Component {
     );
   }
 }
- 
+
 export default NavBar;
