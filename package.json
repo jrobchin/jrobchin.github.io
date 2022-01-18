@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bjorklund-js": "^0.1.2",
     "bulma": "^0.7.4",
     "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
